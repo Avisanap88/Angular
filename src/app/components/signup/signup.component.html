@@ -1,0 +1,33 @@
+<form #signupForm="ngForm" class="modal-content" (ngSubmit)="signup()">
+
+    <div class="container">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Full Name" name="authorName"  [(ngModel)]="user.authorName"  required #authorName="ngModel">
+        <span class="loginFormError" *ngIf="authorName.invalid && authorName.touched">Please enter the name</span>
+        <br/>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="emailId" [(ngModel)]="user.emailId"  required email #emailId="ngModel">
+        <span class="loginFormError" *ngIf="emailId.invalid && emailId.touched">Please enter the email</span>
+        <br/>
+
+        <!-- <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="user.username" required #uname="ngModel">
+        <span class="loginFormError" *ngIf="uname.invalid && uname.touched">Please enter the username</span>
+        <br/> -->
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password with 6 characters min" name="psw" [(ngModel)]="user.password"  required minlength="6" #password="ngModel">
+        <span class="loginFormError" *ngIf="password.invalid && password.touched">Please enter the password</span>
+        <br/>
+
+        <!-- <label for ="roles"><b>Role</b></label>
+        <select name="roles" id="roles" [(ngModel)] = "user.role[0]">
+            <option value ="ROLE_READER" selected>Reader</option>
+            <option value ="ROLE_AUTHOR">Author</option>
+        </select>  -->
+        <button type="submit" class="btn btn-success" [disabled]="signupForm.invalid">SignUp</button>
+    </div>
+</form>
+<simple-notifications></simple-notifications>
+

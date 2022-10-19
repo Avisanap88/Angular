@@ -1,0 +1,8 @@
+button {
+    float: right;
+    margin: 10px;
+}
+button a {
+    color: #ffffff;
+    text-decoration: none;
+}

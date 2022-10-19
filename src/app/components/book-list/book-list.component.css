@@ -1,0 +1,7 @@
+tbody tr td {
+    border: none;
+}
+.allPurchases {
+    float: right;
+    margin: 10px 0px;
+}

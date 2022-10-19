@@ -1,0 +1,30 @@
+<form #loginForm="ngForm" class="modal-content" (ngSubmit)="login()">
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter your Email ID" [class.is-invalid]="emailId.invalid && emailId.touched"
+            class="form-control" required #emailId="ngModel" name="uname" [(ngModel)]="user.emailId">
+        <span class="loginFormError" *ngIf="emailId.invalid && emailId.touched">Please enter the username</span>
+        <br/>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" [class.is-invalid]="password.invalid && password.touched"
+            class="form-control" minlength=6 #password="ngModel" name="psw" [(ngModel)]="user.password" required>
+        <span class="loginFormError" *ngIf="password.invalid && password.touched">Please enter the password</span>
+        <br />
+
+        <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+        <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label> -->
+    </div>
+
+    <!-- <div class="container" style="background-color:#f1f1f1">
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+    <div class="signup">
+        <a class="nav-link" href="#" routerLink="signup" routerLinkActive="active">Create Account</a>
+    </div> -->
+</form>
+
+<simple-notifications></simple-notifications>

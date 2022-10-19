@@ -1,0 +1,43 @@
+<form #bookForm="ngForm" class="modal-content" (ngSubmit)="edit()">
+    <div class="container">
+        <label for="title"><b>Book Title</b></label>
+        <input type="text" placeholder="Enter Book Title" name="title"  [(ngModel)]="book.title"  required #title="ngModel">
+
+        <span class="bookFormError" *ngIf="title.invalid && title.touched">Please enter the book title</span>
+        <br/>
+
+        <label for="publisher"><b>Publisher</b></label>
+        <input type="text" placeholder="Enter Publisher" name="publisher" [(ngModel)]="book.publisher" required #publisher="ngModel">
+        <span class="bookFormError" *ngIf="publisher.invalid && publisher.touched">Please enter the Book Publisher</span>
+        <br/>
+
+        <label for="content"><b>Content</b></label>
+        <input type="text" placeholder="Enter Content" name="content" [(ngModel)]="book.content" required #content="ngModel">
+        <span class="bookFormError" *ngIf="content.invalid && content.touched">Please enter the content</span>
+        <br/>
+
+        <label for="category"><b>Category</b></label>
+        <input type="text" placeholder="Enter Category" name="category" [(ngModel)]="book.category" required #category="ngModel">
+        <span class="bookFormError" *ngIf="category.invalid && category.touched">Please enter the Category</span>
+        <br/>
+
+        <label for="image"><b>Image</b></label>
+        <input type="text" placeholder="Enter Image" name="image"  [(ngModel)]="book.image"  required>
+
+        <label for="price"><b>Price</b></label>
+        <input type="double" placeholder="Enter Price" name="price" [(ngModel)]="book.price" required #price="ngModel">
+        <span class="bookFormError" *ngIf="price.invalid && price.touched">Please enter the Price</span>
+        <br/>
+
+
+        <label for="status"><b>Status</b></label>
+        <select name="active" id="active" [(ngModel)] = "book.active">
+            <option value = false>Not Available</option>
+            <option value = true >Available</option>
+        </select>
+            
+        <button class="btn btn-primary" [disabled]="bookForm.invalid">Edit Book</button>
+    </div>
+</form>
+
+<simple-notifications></simple-notifications>

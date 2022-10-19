@@ -1,0 +1,19 @@
+<form #searchForm = "ngForm" class="search modal-content">
+
+    <div class="container">
+        <label for="title"><b>Book Title</b></label>
+        <input type="text" placeholder="Enter Book Title" required #title="ngModel" name="title"  [(ngModel)]="book.title"  required>
+
+        <label for="authorName"><b>Author Name</b></label>
+        <input type="text" placeholder="Enter Author Name"  required #authorName="ngModel" name="authorName" [(ngModel)]="book.authorName" required >
+
+        <label for="publisher"><b>Publisher Name</b></label>
+        <input type="text" placeholder="Enter Publisher Name" required #publisher="ngModel" name="publisher" [(ngModel)]="book.publisher" required >
+           
+        <label for="date"><b>Release Date</b></label>
+        <input type="date" placeholder="Enter Release date" name="date" [(ngModel)]="book.date" required #date="ngModel">
+        <button class="btn btn-success" type="button" (click) = "search()">Search</button>
+    </div>
+</form>
+
+<simple-notifications></simple-notifications>

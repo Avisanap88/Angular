@@ -1,0 +1,10 @@
+<nav class="digitalBook sticky-top navbar navbar-expand-lg navbar-dark bg-secondary">
+    <h1>Digital Book App</h1>
+    <div class="login" *ngIf="!isLoggedIn">
+        <button class="btn btn-primary login"><a routerLink="login">Login</a></button>
+        <button class="btn btn-primary login"><a routerLink="signup">Sign Up</a></button>
+    </div>
+    <div class="logout my-2 my-lg-0" *ngIf="isLoggedIn">
+        <button class="btn btn-primary pull-right login" (click)="logout()">Logout</button>
+    </div>
+</nav>

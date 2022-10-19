@@ -1,0 +1,24 @@
+<div class="booklist" *ngIf="bookList.length > 0">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Publisher</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of bookList">
+                <td>{{book.title}}</td>
+                <td>{{book.category}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.publisher}}</td>
+                <td><button  class="btn btn-primary" type="submit" (click)="read(book.id)">Read Book</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<simple-notifications></simple-notifications>
+
